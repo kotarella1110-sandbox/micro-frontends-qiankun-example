@@ -8,7 +8,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "dev": "webpack-cli serve --mode development",
+    "dev": "webpack-cli serve --mode development --port 9001",
     "prebuild": "rimraf dist",
     "build": "webpack --mode production",
     "start": "serve dist -s -l 9001"
