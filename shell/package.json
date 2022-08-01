@@ -11,7 +11,7 @@
     "dev": "webpack-cli serve --mode development --port 9000",
     "prebuild": "rimraf dist",
     "build": "webpack --mode production",
-    "start": "serve dist -s -l 9000"
+    "start": "serve dist -C -s -l 9000"
   },
   "dependencies": {
     "qiankun": "^2.7.4",
