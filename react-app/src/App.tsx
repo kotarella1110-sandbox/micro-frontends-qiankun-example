@@ -5,7 +5,7 @@ import { About } from "./components/About";
 import { Topics } from "./components/Topics";
 
 export const App = () => (
-  <BrowserRouter basename="/react">
+  <BrowserRouter basename="react">
     <NavBar />
     <Routes>
       <Route index element={<Home />} />
