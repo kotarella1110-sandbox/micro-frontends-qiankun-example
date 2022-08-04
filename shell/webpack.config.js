@@ -41,7 +41,6 @@ module.exports = (_, argv) => {
       }),
       new ModuleFederationPlugin({
         name: "shell",
-        filename: "remoteEntry.js",
         remotes: {
           reactApp: "reactApp@http://localhost:9001/remoteEntry.js",
         },
