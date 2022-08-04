@@ -1,11 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { name } = require("./package.json");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { name, dependencies } = require("./package.json");
 
 module.exports = (_, argv) => {
   const isProduction = argv.mode == "production";
   return {
-    entry: "./src/index.tsx",
+    entry: "./src/index",
     output: {
+      publicPath: `http://localhost:${argv.port}/`,
       library: `${name}-[name]`,
       libraryTarget: "umd",
       chunkLoadingGlobal: `webpackJsonp_${name}`,
@@ -43,6 +45,23 @@ module.exports = (_, argv) => {
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
+      new ModuleFederationPlugin({
+        name: "reactApp",
+        filename: "remoteEntry.js",
+        shared: [
+          {
+            ...dependencies,
+            react: {
+              singleton: true,
+              requiredVersion: dependencies.react,
+            },
+            "react-dom": {
+              singleton: true,
+              requiredVersion: dependencies["react-dom"],
+            },
+          },
+        ],
+      }),
     ],
     devServer: {
       headers: {
@@ -51,6 +70,9 @@ module.exports = (_, argv) => {
       historyApiFallback: true,
       hot: true,
       liveReload: false,
+    },
+    experiments: {
+      topLevelAwait: true,
     },
   };
 };
