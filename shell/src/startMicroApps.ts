@@ -37,5 +37,5 @@ export const startMicroApps = () => {
     }
   );
 
-  start();
+  start({ prefetch: false });
 };

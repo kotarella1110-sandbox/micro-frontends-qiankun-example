@@ -1,6 +1,7 @@
 import { prefetchApps } from "qiankun";
 import { useEffect } from "react";
 import { useHover } from "../hooks/useHover";
+import reactAppPackageJson from "../../../react-app/package.json";
 
 const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
   e.preventDefault();
@@ -12,7 +13,9 @@ export const NavBar = () => {
 
   useEffect(() => {
     if (isHovered) {
-      prefetchApps([{ name: "reactApp", entry: "//localhost:9001" }]);
+      prefetchApps([
+        { name: reactAppPackageJson.name, entry: "//localhost:9002" },
+      ]);
     }
   }, [isHovered]);
 
