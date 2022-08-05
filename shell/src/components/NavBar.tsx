@@ -1,7 +1,11 @@
 import { prefetchApps } from "qiankun";
 import { useEffect } from "react";
-import { navigateToUrl } from "single-spa";
 import { useHover } from "../hooks/useHover";
+
+const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
+  e.preventDefault();
+  history.pushState(null, "", e.currentTarget.href);
+};
 
 export const NavBar = () => {
   const [ref, isHovered] = useHover<HTMLAnchorElement>();
