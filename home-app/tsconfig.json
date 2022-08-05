@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"]
+}

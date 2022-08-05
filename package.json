@@ -15,15 +15,18 @@
   "scripts": {
     "postinstall": "run-p install:*",
     "install:shell": "npm install --prefix shell",
+    "install:home-app": "npm install --prefix shell",
     "install:react-app": "npm install --prefix react-app",
     "dev": "run-p dev:*",
     "dev:shell": "npm run dev --prefix shell",
+    "dev:home-app": "npm run dev --prefix home-app",
     "dev:react-app": "npm run dev --prefix react-app",
     "build": "run-p build:*",
     "build:shell": "npm run build --prefix shell",
     "build:react-app": "npm run build --prefix react-app",
     "start": "run-p start:*",
     "start:shell": "npm start --prefix shell",
+    "start:home-app": "npm start --prefix home-app",
     "start:react-app": "npm start --prefix react-app",
     "format": "prettier --ignore-path .gitignore --write ."
   },

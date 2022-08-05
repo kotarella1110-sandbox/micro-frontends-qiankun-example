@@ -4,8 +4,14 @@ export const startMicroApps = () => {
   registerMicroApps(
     [
       {
-        name: "react-app",
+        name: "home-app",
         entry: "//localhost:9001",
+        container: "#container",
+        activeRule: (location) => location.pathname === "/",
+      },
+      {
+        name: "react-app",
+        entry: "//localhost:9002",
         container: "#container",
         activeRule: "/react",
       },

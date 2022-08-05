@@ -1,27 +1,20 @@
 {
-  "name": "react-app",
+  "name": "home-app",
   "version": "0.0.0",
-  "description": "React Application",
+  "description": "Home Application",
   "author": "kotarella1110",
   "license": "MIT",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
-    "dev": "webpack-cli serve --mode development --port 9002",
+    "dev": "webpack-cli serve --mode development --port 9001",
     "prebuild": "rimraf dist",
     "build": "webpack --mode production",
-    "start": "serve dist -C -s -l 9002"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "start": "serve dist -C -s -l 9001"
   },
   "devDependencies": {
     "@swc/core": "^1.2.222",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
     "html-webpack-plugin": "^5.5.0",
     "rimraf": "^3.0.2",
     "serve": "^14.0.1",
