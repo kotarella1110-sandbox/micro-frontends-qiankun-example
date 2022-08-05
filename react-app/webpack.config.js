@@ -44,6 +44,10 @@ module.exports = (_, argv) => {
         template: "./public/index.html",
       }),
     ],
+    externals: {
+      react: "React",
+      "react-dom": "ReactDOM",
+    },
     devServer: {
       headers: {
         "Access-Control-Allow-Origin": "*",

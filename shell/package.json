@@ -14,9 +14,7 @@
     "start": "serve dist -C -s -l 9000"
   },
   "dependencies": {
-    "qiankun": "^2.7.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "qiankun": "^2.7.4"
   },
   "devDependencies": {
     "@swc/core": "^1.2.222",

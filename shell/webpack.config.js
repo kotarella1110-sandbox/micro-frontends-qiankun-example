@@ -30,6 +30,10 @@ module.exports = (_, argv) => {
         },
       ],
     },
+    externals: {
+      react: "React",
+      "react-dom": "ReactDOM",
+    },
     resolve: {
       extensions: [".js", ".tsx", ".jsx", ".ts"],
     },
