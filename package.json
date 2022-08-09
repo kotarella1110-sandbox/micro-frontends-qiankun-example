@@ -23,6 +23,7 @@
     "dev:react-app": "npm run dev --prefix react-app",
     "build": "run-p build:*",
     "build:shell": "npm run build --prefix shell",
+    "build:home-app": "npm run build --prefix home-app",
     "build:react-app": "npm run build --prefix react-app",
     "start": "run-p start:*",
     "start:shell": "npm start --prefix shell",
