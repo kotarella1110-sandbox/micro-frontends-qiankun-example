@@ -16,6 +16,7 @@
   "devDependencies": {
     "@swc/core": "^1.2.222",
     "html-webpack-plugin": "^5.5.0",
+    "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
     "serve": "^14.0.1",
     "swc-loader": "^0.2.3",
