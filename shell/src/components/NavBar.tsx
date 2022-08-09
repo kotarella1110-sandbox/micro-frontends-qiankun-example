@@ -20,19 +20,25 @@ export const NavBar = () => {
   }, [isHovered]);
 
   return (
-    <nav>
-      <ul style={{ display: "flex", listStyle: "none", margin: 0, padding: 0 }}>
+    <nav style={styleNavBar}>
+      <h3>global nav</h3>
+      <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
         <li style={{ padding: "8px" }}>
           <a href="/" onClick={navigateToUrl}>
-            Home
+            to Home App
           </a>
         </li>
         <li style={{ padding: "8px" }}>
           <a ref={ref} href="/react" onClick={navigateToUrl}>
-            React
+            to React App
           </a>
         </li>
       </ul>
     </nav>
   );
+};
+
+const styleNavBar = {
+  background: "#F2F4F7",
+  minHeight: "100vh"
 };
