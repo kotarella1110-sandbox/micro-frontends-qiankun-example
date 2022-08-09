@@ -15,7 +15,7 @@
   "scripts": {
     "postinstall": "run-p install:*",
     "install:shell": "npm install --prefix shell",
-    "install:home-app": "npm install --prefix shell",
+    "install:home-app": "npm install --prefix home-app",
     "install:react-app": "npm install --prefix react-app",
     "dev": "run-p dev:*",
     "dev:shell": "npm run dev --prefix shell",
