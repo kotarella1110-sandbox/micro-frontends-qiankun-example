@@ -9,5 +9,5 @@ export const App = () => (
 
 const styleRoot = {
   display: "grid",
-  gridTemplateColumns: "264px max-content"
+  gridTemplateColumns: "264px max-content",
 };

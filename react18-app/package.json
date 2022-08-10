@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "react18-app",
   "version": "0.0.0",
   "description": "React Application",
   "author": "kotarella1110",
@@ -8,10 +8,10 @@
     "node": "16.x"
   },
   "scripts": {
-    "dev": "webpack-cli serve --mode development --port 9002",
+    "dev": "webpack-cli serve --mode development --port 9003",
     "prebuild": "rimraf dist",
     "build": "webpack --mode production",
-    "start": "serve dist -C -s -l 9002"
+    "start": "serve dist -C -s -l 9003"
   },
   "dependencies": {
     "react": "^18.2.0",

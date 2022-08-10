@@ -1,7 +1,6 @@
-import { prefetchApps } from "qiankun";
-import { useEffect } from "react";
-import { useHover } from "../hooks/useHover";
-import reactAppPackageJson from "../../../react-app/package.json";
+import { usePrefetchApp } from "../hooks/usePrefetchApp";
+import react17AppPackageJson from "../../../react17-app/package.json";
+import react18AppPackageJson from "../../../react18-app/package.json";
 
 const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
   e.preventDefault();
@@ -9,15 +8,15 @@ const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
 };
 
 export const NavBar = () => {
-  const [ref, isHovered] = useHover<HTMLAnchorElement>();
+  const react17Ref = usePrefetchApp<HTMLAnchorElement>({
+    name: react17AppPackageJson.name,
+    entry: "//localhost:9002",
+  });
 
-  useEffect(() => {
-    if (isHovered) {
-      prefetchApps([
-        { name: reactAppPackageJson.name, entry: "//localhost:9002" },
-      ]);
-    }
-  }, [isHovered]);
+  const react18Ref = usePrefetchApp<HTMLAnchorElement>({
+    name: react18AppPackageJson.name,
+    entry: "//localhost:9003",
+  });
 
   return (
     <nav style={styleNavBar}>
@@ -29,8 +28,13 @@ export const NavBar = () => {
           </a>
         </li>
         <li style={{ padding: "8px" }}>
-          <a ref={ref} href="/react" onClick={navigateToUrl}>
-            to React App
+          <a ref={react17Ref} href="/react17" onClick={navigateToUrl}>
+            to React17 App
+          </a>
+        </li>
+        <li style={{ padding: "8px" }}>
+          <a ref={react18Ref} href="/react18" onClick={navigateToUrl}>
+            to React18 App
           </a>
         </li>
       </ul>
@@ -40,5 +44,5 @@ export const NavBar = () => {
 
 const styleNavBar = {
   background: "#F2F4F7",
-  minHeight: "100vh"
+  minHeight: "100vh",
 };
