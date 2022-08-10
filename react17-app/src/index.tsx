@@ -1,26 +1,24 @@
 import App from "./App";
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { unmountComponentAtNode } from "react-dom";
+import * as ReactDOM from "react-dom";
 import packageJson from "../package.json";
 
 if (window.__POWERED_BY_QIANKUN__) {
   window.__webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
 }
 
-const getContainer = (props?: any) =>
-  props?.container
+let container: HTMLElement;
+
+const render = (props?: any) => {
+  container = props?.container
     ? props.container.querySelector("#root")
     : document.getElementById("root");
 
-const render = (props?: any) => {
-  const container = getContainer(props);
-  const root = createRoot(container);
-
-  root.render(
+  ReactDOM.render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
+    container
   );
 };
 
@@ -39,7 +37,7 @@ export async function mount(props: any) {
 
 export async function unmount(props: any) {
   console.log(`${packageJson.name} unmount`, props);
-  unmountComponentAtNode(getContainer(props));
+  ReactDOM.unmountComponentAtNode(container);
 }
 
 export async function update(props: any) {

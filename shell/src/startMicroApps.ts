@@ -1,6 +1,7 @@
 import { registerMicroApps, start } from "qiankun";
 import homeAppPackageJson from "../../home-app/package.json";
-import reactAppPackageJson from "../../react-app/package.json";
+import react17AppPackageJson from "../../react17-app/package.json";
+import react18AppPackageJson from "../../react18-app/package.json";
 
 export const startMicroApps = () => {
   registerMicroApps(
@@ -12,10 +13,16 @@ export const startMicroApps = () => {
         activeRule: (location) => location.pathname === "/",
       },
       {
-        name: reactAppPackageJson.name,
+        name: react17AppPackageJson.name,
         entry: "//localhost:9002",
         container: "#container",
-        activeRule: "/react",
+        activeRule: "/react17",
+      },
+      {
+        name: react18AppPackageJson.name,
+        entry: "//localhost:9003",
+        container: "#container",
+        activeRule: "/react18",
       },
     ],
     {
