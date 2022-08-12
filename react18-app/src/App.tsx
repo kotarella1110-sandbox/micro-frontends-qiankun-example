@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { Home } from "./components/Home";
+import { TodoList } from "./components/TodoList";
 import { Counter } from "./components/Counter";
 import { Profile } from "./components/Profile";
 
@@ -9,6 +10,7 @@ export const App = () => (
     <NavBar />
     <Routes>
       <Route index element={<Home />} />
+      <Route path="todo" element={<TodoList />} />
       <Route path="counter" element={<Counter />} />
       <Route path="profile" element={<Profile />} />
     </Routes>

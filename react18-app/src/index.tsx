@@ -1,6 +1,7 @@
 import App from "./App";
 import { StrictMode } from "react";
 import { createRoot, Root } from "react-dom/client";
+import { RecoilRoot } from "recoil";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import packageJson from "../package.json";
@@ -19,9 +20,11 @@ const render = (props?: any) => {
 
   root.render(
     <StrictMode>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <RecoilRoot>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </RecoilRoot>
     </StrictMode>
   );
 };
