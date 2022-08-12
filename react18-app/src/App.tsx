@@ -1,16 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { Home } from "./components/Home";
-import { About } from "./components/About";
-import { Topics } from "./components/Topics";
+import { Profile } from "./components/Profile";
 
 export const App = () => (
   <BrowserRouter basename="react18">
     <NavBar />
     <Routes>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="topics" element={<Topics />} />
+      <Route path="profile" element={<Profile />} />
     </Routes>
   </BrowserRouter>
 );
