@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import {
   decrement,
@@ -10,7 +9,7 @@ import {
   countSelector,
 } from "../redux/counter";
 
-export function Counter() {
+export const Counter = () => {
   const count = useAppSelector(countSelector);
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState("2");
@@ -53,4 +52,4 @@ export function Counter() {
       </div>
     </div>
   );
-}
+};
