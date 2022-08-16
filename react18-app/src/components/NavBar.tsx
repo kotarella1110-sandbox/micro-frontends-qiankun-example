@@ -7,10 +7,13 @@ export const NavBar = () => (
         <Link to="/">Home</Link>
       </li>
       <li style={{ padding: "8px" }}>
-        <Link to="about">About</Link>
+        <Link to="todo">Todo</Link>
       </li>
       <li style={{ padding: "8px" }}>
-        <Link to="topics">Topics</Link>
+        <Link to="counter">Counter</Link>
+      </li>
+      <li style={{ padding: "8px" }}>
+        <Link to="profile">Profile</Link>
       </li>
     </ul>
   </nav>
