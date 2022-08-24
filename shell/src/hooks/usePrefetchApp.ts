@@ -1,4 +1,4 @@
-import { prefetchApps, AppMetadata } from "qiankun";
+import { AppMetadata, prefetchApps } from "qiankun";
 import { useEffect } from "react";
 import { useHover } from "./useHover";
 

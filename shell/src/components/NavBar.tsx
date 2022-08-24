@@ -1,6 +1,6 @@
-import { usePrefetchApp } from "../hooks/usePrefetchApp";
 import react17AppPackageJson from "../../../react17-app/package.json";
 import react18AppPackageJson from "../../../react18-app/package.json";
+import { usePrefetchApp } from "../hooks/usePrefetchApp";
 
 const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
   e.preventDefault();

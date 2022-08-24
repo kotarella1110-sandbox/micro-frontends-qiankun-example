@@ -1,8 +1,7 @@
-import App from "./App";
 import { StrictMode } from "react";
 import { createRoot, Root } from "react-dom/client";
-import { unmountComponentAtNode } from "react-dom";
 import packageJson from "../package.json";
+import App from "./App";
 
 if (window.__POWERED_BY_QIANKUN__) {
   window.__webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
