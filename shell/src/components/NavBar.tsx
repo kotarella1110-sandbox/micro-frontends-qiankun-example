@@ -10,12 +10,18 @@ const navigateToUrl: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
 export const NavBar = () => {
   const react17Ref = usePrefetchApp<HTMLAnchorElement>({
     name: react17AppPackageJson.name,
-    entry: "//localhost:9002",
+    entry: {
+      html: '<div id="root"></div>',
+      scripts: ["//localhost:9002/main.js"],
+    },
   });
 
   const react18Ref = usePrefetchApp<HTMLAnchorElement>({
     name: react18AppPackageJson.name,
-    entry: "//localhost:9003",
+    entry: {
+      html: '<div id="root"></div>',
+      scripts: ["//localhost:9003/main.js"],
+    },
   });
 
   return (

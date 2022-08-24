@@ -14,13 +14,19 @@ export const startMicroApps = () => {
       },
       {
         name: react17AppPackageJson.name,
-        entry: "//localhost:9002",
+        entry: {
+          html: '<div id="root"></div>',
+          scripts: ["//localhost:9002/main.js"],
+        },
         container: "#container",
         activeRule: "/react17",
       },
       {
         name: react18AppPackageJson.name,
-        entry: "//localhost:9003",
+        entry: {
+          html: '<div id="root"></div>',
+          scripts: ["//localhost:9003/main.js"],
+        },
         container: "#container",
         activeRule: "/react18",
       },
