@@ -1,7 +1,16 @@
-import { registerMicroApps, start } from "qiankun";
+import {
+  initGlobalState,
+  MicroAppStateActions,
+  registerMicroApps,
+  start,
+} from "qiankun";
 import homeAppPackageJson from "../../home-app/package.json";
 import react17AppPackageJson from "../../react17-app/package.json";
 import react18AppPackageJson from "../../react18-app/package.json";
+
+const actions: MicroAppStateActions = initGlobalState({
+  shared: "",
+});
 
 export const startMicroApps = () => {
   registerMicroApps(
@@ -17,12 +26,18 @@ export const startMicroApps = () => {
         entry: "//localhost:9002",
         container: "#container",
         activeRule: "/react17",
+        props: {
+          actions,
+        },
       },
       {
         name: react18AppPackageJson.name,
         entry: "//localhost:9003",
         container: "#container",
         activeRule: "/react18",
+        props: {
+          actions,
+        },
       },
     ],
     {

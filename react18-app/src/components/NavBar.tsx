@@ -12,6 +12,9 @@ export const NavBar = () => (
       <li style={{ padding: "8px" }}>
         <Link to="topics">Topics</Link>
       </li>
+      <li style={{ padding: "8px" }}>
+        <Link to="shared">Shared</Link>
+      </li>
     </ul>
   </nav>
 );

@@ -16,7 +16,7 @@ const render = (props?: any) => {
 
   ReactDOM.render(
     <StrictMode>
-      <App />
+      <App {...props} />
     </StrictMode>,
     container
   );

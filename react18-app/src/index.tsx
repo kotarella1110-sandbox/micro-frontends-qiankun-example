@@ -17,7 +17,7 @@ const render = (props?: any) => {
 
   root.render(
     <StrictMode>
-      <App />
+      <App {...props} />
     </StrictMode>
   );
 };
